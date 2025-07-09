@@ -1,0 +1,381 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* TECHASOFT Neon Theme Colors */
+  --neon-pink: hsl(300, 100%, 50%);
+  --neon-cyan: hsl(180, 100%, 50%);
+  --dark-bg: hsl(0, 0%, 10.2%);
+  --dark-card: hsl(0, 0%, 16.5%);
+  --dark-border: hsl(0, 0%, 22.7%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 10.2%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(0, 0%, 16.5%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(0, 0%, 10.2%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 16.5%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 22.7%);
+  --input: hsl(0, 0%, 22.7%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(0, 0%, 16.5%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(0, 0%, 16.5%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* TECHASOFT Dark Neon Theme Colors */
+  --neon-pink: hsl(300, 100%, 50%);
+  --neon-cyan: hsl(180, 100%, 50%);
+  --dark-bg: hsl(0, 0%, 10.2%);
+  --dark-card: hsl(0, 0%, 16.5%);
+  --dark-border: hsl(0, 0%, 22.7%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Neon Colors */
+  .text-neon-pink {
+    color: var(--neon-pink);
+  }
+  
+  .text-neon-cyan {
+    color: var(--neon-cyan);
+  }
+  
+  .bg-neon-pink {
+    background-color: var(--neon-pink);
+  }
+  
+  .bg-neon-cyan {
+    background-color: var(--neon-cyan);
+  }
+  
+  .border-neon-pink {
+    border-color: var(--neon-pink);
+  }
+  
+  .border-neon-cyan {
+    border-color: var(--neon-cyan);
+  }
+  
+  /* Dark Theme Colors */
+  .bg-dark-bg {
+    background-color: var(--dark-bg);
+  }
+  
+  .bg-dark-card {
+    background-color: var(--dark-card);
+  }
+  
+  .border-dark-border {
+    border-color: var(--dark-border);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Glass Effect */
+  .glass-effect {
+    background: hsl(0, 0%, 16.5%, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(0, 0%, 98%, 0.1);
+  }
+  
+  /* Neon Glow Effects */
+  .neon-glow-pink {
+    box-shadow: 
+      0 0 5px var(--neon-pink),
+      0 0 10px var(--neon-pink),
+      0 0 15px var(--neon-pink),
+      0 0 20px var(--neon-pink);
+  }
+  
+  .neon-glow-cyan {
+    box-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px var(--neon-cyan),
+      0 0 15px var(--neon-cyan),
+      0 0 20px var(--neon-cyan);
+  }
+  
+  /* Hover Effects */
+  .hover-glow-pink:hover {
+    box-shadow: 
+      0 0 10px var(--neon-pink),
+      0 0 20px var(--neon-pink),
+      0 0 30px var(--neon-pink);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .hover-glow-cyan:hover {
+    box-shadow: 
+      0 0 10px var(--neon-cyan),
+      0 0 20px var(--neon-cyan),
+      0 0 30px var(--neon-cyan);
+    transition: box-shadow 0.3s ease;
+  }
+}
+
+@layer components {
+  /* Neon Button Variants */
+  .btn-neon-pink {
+    @apply bg-neon-pink text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-neon-pink:hover {
+    @apply hover-glow-pink scale-105;
+  }
+  
+  .btn-neon-cyan {
+    @apply bg-neon-cyan text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-neon-cyan:hover {
+    @apply hover-glow-cyan scale-105;
+  }
+  
+  .btn-neon-outline-pink {
+    @apply border-2 border-neon-pink text-neon-pink bg-transparent font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-neon-outline-pink:hover {
+    @apply bg-neon-pink text-white hover-glow-pink;
+  }
+  
+  .btn-neon-outline-cyan {
+    @apply border-2 border-neon-cyan text-neon-cyan bg-transparent font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  
+  .btn-neon-outline-cyan:hover {
+    @apply bg-neon-cyan text-white hover-glow-cyan;
+  }
+  
+  /* Neon Card */
+  .neon-card {
+    @apply glass-effect rounded-2xl border border-dark-border transition-all duration-300;
+  }
+  
+  .neon-card:hover {
+    @apply border-neon-pink;
+  }
+  
+  /* Animated Elements */
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite alternate;
+  }
+  
+  .wave-animation {
+    animation: wave 3s ease-in-out infinite;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(5deg);
+  }
+}
+
+@keyframes pulse-neon {
+  0% {
+    opacity: 1;
+    box-shadow: 
+      0 0 5px var(--neon-pink),
+      0 0 10px var(--neon-pink),
+      0 0 15px var(--neon-pink);
+  }
+  100% {
+    opacity: 0.7;
+    box-shadow: 
+      0 0 10px var(--neon-pink),
+      0 0 20px var(--neon-pink),
+      0 0 30px var(--neon-pink);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+/* Chat Message Animations */
+.chat-message {
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-pink);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  border: 2px solid var(--dark-border);
+  border-top: 2px solid var(--neon-pink);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Voice Recording Indicator */
+.recording-indicator {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 768px) {
+  .glass-effect {
+    backdrop-filter: blur(5px);
+  }
+  
+  .gradient-text {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .glass-effect {
+    background: var(--dark-card);
+    border: 2px solid var(--neon-pink);
+  }
+  
+  .gradient-text {
+    color: var(--neon-pink);
+    background: none;
+    -webkit-text-fill-color: var(--neon-pink);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .floating-animation,
+  .pulse-neon,
+  .wave-animation,
+  .chat-message {
+    animation: none;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .glass-effect {
+    background: white;
+    border: 1px solid black;
+  }
+  
+  .gradient-text {
+    color: black;
+    background: none;
+    -webkit-text-fill-color: black;
+  }
+  
+  .bg-dark-bg,
+  .bg-dark-card {
+    background: white !important;
+  }
+  
+  .text-white {
+    color: black !important;
+  }
+}
