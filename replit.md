@@ -32,10 +32,12 @@ Preferred communication style: Simple, everyday language.
 ## Key Components
 
 ### AI Chat System
-- Real-time chat interface with OpenAI integration
+- Real-time chat interface with hybrid AI approach (predefined + OpenAI)
+- Comprehensive predefined response system for instant answers
 - Multi-language support (English, Telugu, Tamil, Hindi, Kannada)
 - Voice input/output capabilities using Web Speech API
 - Structured troubleshooting responses with confidence scoring
+- Smart fallback system when OpenAI API is unavailable
 - Support escalation detection and team member routing
 
 ### Troubleshooting Engine

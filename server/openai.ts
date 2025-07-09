@@ -67,6 +67,7 @@ Respond in JSON format with: issueType (camera/plc/runtime/null), response (HTML
 export async function analyzeTechnicalIssue(userMessage: string, language: string = 'en-US'): Promise<TroubleshootingResponse> {
   // First check predefined responses
   const predefinedMatch = findBestMatch(userMessage);
+  
   if (predefinedMatch) {
     return {
       issueType: predefinedMatch.issueType || null,
