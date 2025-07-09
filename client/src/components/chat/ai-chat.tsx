@@ -22,10 +22,12 @@ export function AiChat() {
   const { messages, sendMessage, isLoading, addWelcomeMessage } = useOpenaiChat();
   const { speak } = useSpeech();
 
-  // Initialize with welcome message
+  // Initialize with welcome message only once
   useEffect(() => {
-    addWelcomeMessage(selectedLanguage);
-  }, [addWelcomeMessage, selectedLanguage]);
+    if (messages.length === 0) {
+      addWelcomeMessage(selectedLanguage);
+    }
+  }, []);
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {

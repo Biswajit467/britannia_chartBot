@@ -28,11 +28,17 @@ interface UseOpenaiChatReturn {
 
 export function useOpenaiChat(): UseOpenaiChatReturn {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   const chatMutation = useMutation({
     mutationFn: async ({ message, language }: { message: string; language?: string }) => {
-      const response = await apiRequest('POST', '/api/chat', { message, language });
-      return response.json() as Promise<ChatResponse>;
+      try {
+        const response = await apiRequest('POST', '/api/chat', { message, language });
+        return response.json() as Promise<ChatResponse>;
+      } catch (error) {
+        console.error('Chat API error:', error);
+        throw error;
+      }
     },
     onSuccess: (data, variables) => {
       // Add AI response
@@ -47,6 +53,7 @@ export function useOpenaiChat(): UseOpenaiChatReturn {
       setMessages(prev => [...prev, aiMessage]);
     },
     onError: (error) => {
+      console.error('Chat mutation error:', error);
       // Add error message
       const errorMessage: ChatMessage = {
         id: Date.now().toString() + '_error',
@@ -59,12 +66,14 @@ export function useOpenaiChat(): UseOpenaiChatReturn {
     }
   });
 
-  const welcomeMutation = useMutation({
-    mutationFn: async (language: string = 'en-US') => {
+  const loadWelcomeMessage = async (language: string = 'en-US') => {
+    if (hasInitialized) return;
+    
+    try {
+      setHasInitialized(true);
       const response = await apiRequest('GET', `/api/chat/welcome?language=${language}`);
-      return response.json() as Promise<{ message: string }>;
-    },
-    onSuccess: (data) => {
+      const data = await response.json() as { message: string };
+      
       const welcomeMessage: ChatMessage = {
         id: 'welcome_' + Date.now(),
         content: data.message,
@@ -73,8 +82,17 @@ export function useOpenaiChat(): UseOpenaiChatReturn {
       };
       
       setMessages([welcomeMessage]);
+    } catch (error) {
+      console.error('Welcome API error:', error);
+      const fallbackMessage: ChatMessage = {
+        id: 'welcome_fallback',
+        content: 'Welcome to TECHASOFT Support! How can I help you today?',
+        isUser: false,
+        timestamp: new Date()
+      };
+      setMessages([fallbackMessage]);
     }
-  });
+  };
 
   const sendMessage = useCallback((message: string, language: string = 'en-US') => {
     // Add user message immediately
@@ -89,11 +107,11 @@ export function useOpenaiChat(): UseOpenaiChatReturn {
     
     // Send to API
     chatMutation.mutate({ message, language });
-  }, [chatMutation]);
+  }, []);
 
   const addWelcomeMessage = useCallback((language: string = 'en-US') => {
-    welcomeMutation.mutate(language);
-  }, [welcomeMutation]);
+    loadWelcomeMessage(language);
+  }, []);
 
   const clearMessages = useCallback(() => {
     setMessages([]);
@@ -102,8 +120,8 @@ export function useOpenaiChat(): UseOpenaiChatReturn {
   return {
     messages,
     sendMessage,
-    isLoading: chatMutation.isPending || welcomeMutation.isPending,
-    error: chatMutation.error?.message || welcomeMutation.error?.message || null,
+    isLoading: chatMutation.isPending,
+    error: chatMutation.error?.message || null,
     clearMessages,
     addWelcomeMessage
   };
