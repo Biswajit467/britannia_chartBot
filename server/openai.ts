@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { findBestMatch } from "./predefined-responses";
 
 // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
 const openai = new OpenAI({ 
@@ -64,6 +65,17 @@ If an issue cannot be resolved with these steps, escalate to Developer Support a
 Respond in JSON format with: issueType (camera/plc/runtime/null), response (HTML formatted), needsEscalation (boolean), confidence (0-1).`;
 
 export async function analyzeTechnicalIssue(userMessage: string, language: string = 'en-US'): Promise<TroubleshootingResponse> {
+  // First check predefined responses
+  const predefinedMatch = findBestMatch(userMessage);
+  if (predefinedMatch) {
+    return {
+      issueType: predefinedMatch.issueType || null,
+      response: predefinedMatch.response,
+      needsEscalation: false,
+      confidence: predefinedMatch.confidence
+    };
+  }
+
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -88,11 +100,30 @@ export async function analyzeTechnicalIssue(userMessage: string, language: strin
     };
   } catch (error) {
     console.error("OpenAI API error:", error);
+    
+    // Provide more specific fallback based on keywords in user message
+    const message = userMessage.toLowerCase();
+    let fallbackResponse = "I'm currently experiencing technical difficulties with AI processing.";
+    let issueType = null;
+    
+    if (message.includes('camera') || message.includes('connection')) {
+      issueType = 'camera';
+      fallbackResponse = "For camera connection issues:\n\n1. Check TECASOFT control panel\n2. Verify Ethernet switch lights are blinking\n3. Re-plug cables if needed\n4. Restart Client Application\n\nIf problem persists, contact Developer Support at +1 991 603 9396";
+    } else if (message.includes('plc') || message.includes('disconnected')) {
+      issueType = 'plc';
+      fallbackResponse = "For PLC connection issues:\n\n1. Ensure control panel is ON\n2. Check Ethernet connections\n3. Restart Client Application (Stop → Start)\n4. Restart PC if needed\n\nIf problem persists, contact Developer Support at +1 991 603 9396";
+    } else if (message.includes('error') || message.includes('runtime')) {
+      issueType = 'runtime';
+      fallbackResponse = "For runtime errors:\n\n1. Restart Client Application\n2. Restart PC if error persists\n3. Check all connections\n\nIf problem continues, contact Developer Support at +1 991 603 9396";
+    } else {
+      fallbackResponse = "I can help with:\n• Machine startup/shutdown\n• Camera connectivity issues\n• PLC disconnection problems\n• Runtime error troubleshooting\n• Maintenance procedures\n\nPlease specify your issue or contact Developer Support at +1 991 603 9396";
+    }
+    
     return {
-      issueType: null,
-      response: "I'm experiencing technical difficulties. Please try again or contact Developer Support at +1 991 603 9396 for immediate assistance.",
+      issueType,
+      response: fallbackResponse,
       needsEscalation: true,
-      confidence: 0
+      confidence: 0.3
     };
   }
 }

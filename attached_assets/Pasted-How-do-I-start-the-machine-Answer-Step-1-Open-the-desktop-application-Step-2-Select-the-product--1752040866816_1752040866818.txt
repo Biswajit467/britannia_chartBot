@@ -1,0 +1,238 @@
+How do I start the machine?
+Answer:
+Step 1: Open the desktop application
+Step 2: Select the product variant
+Step 3: Set the RPM as per the product requirement
+Step 4: Click the “Start” button
+How do I stop the machine?
+Answer:
+Click the “Stop” button on the software interface. It will safely halt the operations.
+Do I need any technical knowledge to use the software?
+Answer:
+No, the interface is user-friendly and designed for non-technical users.
+How do I choose the correct biscuit type?
+Answer:
+Select the correct product variant from the dropdown menu or product selection panel in the interface.
+Can I operate this system with no training?
+Answer:
+Basic instructions are enough, and the UI is intuitive. A short demo session is recommended.
+Where can I see if a biscuit is defective?
+Answer:
+Live camera feed shows the production line. Defects are highlighted, and counts are displayed on the side panel.
+Can I monitor the current production status?
+Answer:
+Yes, the live monitoring screen shows real-time operations and defect counts.
+How do I know which product is currently running?
+Answer:
+The product name and variant are displayed at the top of the interface once selected.
+How can I change the product type during a shift?
+Answer:
+Click “Stop”, select a new product variant, set RPM, then click “Start”.
+
+
+What is RPM and how do I set it?
+Answer:
+RPM stands for Revolutions Per Minute of the conveyor.
+Set it in the product selection panel before starting the machine.
+
+Real-Time Monitoring and Alerts
+What does the live camera feed show?
+Answer:
+It shows the production line and biscuits in real time for visual inspection.
+How often is the defect count updated?
+Answer:
+It updates live as biscuits pass through the detection zone.
+What if the defect count looks too high?
+Answer:
+Step 1: Pause the system
+Step 2: Inspect product input quality
+Step 3: Check if the correct product variant is selected
+Step 4: Contact technical support if needed
+How can I confirm the system is rejecting properly?
+Answer:
+Check the ejection section physically or view the rejection status on screen.
+What should I do if defects are not being ejected?
+Answer:
+Step 1: Stop the system
+Step 2: Check air ejector mechanism
+Step 3: Ensure air pressure is active
+Step 4: Restart the system
+Step 5: Contact maintenance if the issue persists
+Is there an alert if the system stops detecting?
+Answer:
+Yes, alerts or abnormal behavior in defect count or camera feed indicate a detection issue.
+How can I access logs for past runs?
+Answer:
+Click the “Logs” or “Reports” tab in the software to view all past production sessions.
+Does the system give alerts for hardware issues?
+Answer:
+Basic alerts are shown on-screen if the camera or ejection unit is not functioning.
+What happens if power is lost during operation?
+Answer:
+The system halts and resumes safely when restarted. Logs will show the interruption time.
+Can I mute alert sounds or pop-ups?
+Answer:
+Some versions may have sound controls. Check the settings section of the application.
+
+Product Selection and Variant Handling
+How many product types can I run on this machine?
+Answer:
+The system supports all trained variants like Bourbon and Pure Magic. You can add more through updates.
+Can I run two products at the same time?
+Answer:
+No, only one product variant can be selected per session to ensure accuracy.
+How do I add a new product to the system?
+Answer:
+This requires model retraining. Contact the technical team for adding new product variants.
+Will the system work if I use untrained biscuits?
+Answer:
+It may misclassify or show inaccurate defect counts. Only use trained products.
+How do I switch between Bourbon and Pure Magic?
+Answer:
+Step 1: Click “Stop”
+Step 2: Select the new variant
+Step 3: Adjust RPM
+Step 4: Click “Start”
+Can the system detect undercooked biscuits?
+Answer:
+Yes, if such defects were included during training. Otherwise, accuracy may vary.
+Does the system recognize broken edges or missing cream?
+Answer:
+Yes, such features are detectable if part of the training data.
+Will different lighting affect detection?
+Answer:
+Yes. Stable lighting is necessary for accurate detection.
+Can I save custom RPM settings for each product?
+Answer:
+Yes, the system saves the last used RPM per product or allows you to set it manually.
+Is biscuit size important for detection?
+Answer:
+Yes. Each model is trained on specific sizes and shapes.
+
+
+Logs, Reports, and Tracking
+How do I view logs of rejected items?
+Answer:
+Open the “Logs” section in the application. It shows date, time, product, and defect counts.
+Can I export data from the logs?
+Answer:
+Yes, some systems allow export in Excel or PDF format.
+What data is stored in logs?
+Answer:
+Start/stop times, product variant, total runtime, defect counts, and rejection timestamps.
+Can I check who operated the machine last?
+Answer:
+Yes, if the system has user login features.
+Can I reset daily logs?
+Answer:
+Yes. Use the “Reset Logs” button or clear data at the end of the shift.
+Can I compare shift-wise rejection rates?
+Answer:
+Yes, logs can be filtered by date and shift for analysis.
+Can I track machine downtime?
+Answer:
+Yes. The total running time and breaks are logged.
+How can I calculate efficiency?
+Answer:
+Use:
+Efficiency = (Accepted Items / Total Items) × 100
+Does the system show which defect was detected?
+Answer:
+Only if labeled. Otherwise, it just shows “Defective” as a category.
+Can I integrate this data with ERP systems?
+Answer:
+Yes, through custom APIs or reporting exports.
+
+Troubleshooting and Support
+Why is my defect count always zero?
+Answer:
+Step 1: Check if the camera is working
+Step 2: Ensure correct product is selected
+Step 3: Restart the application
+Step 4: Check lighting and product placement
+The ejection is delayed, what should I do?
+Answer:
+Ensure timing sync between detection and air jet is correct. Contact maintenance if the delay persists.
+Why is the interface not responding?
+Answer:
+Restart the software. If the issue continues, check system RAM or contact IT support.
+How do I update the software?
+Answer:
+Contact the support team. Updates are usually done through installers or over-the-air if enabled.
+How often is model retraining needed?
+Answer:
+When product visuals change significantly or accuracy drops.
+Is internet required for daily use?
+Answer:
+No, it runs offline after installation.
+How do I request a product addition?
+Answer:
+Email the technical team with sample images and specifications.
+What if biscuits get stuck during inspection?
+Answer:
+Stop the system, clear the jam, and restart after checking alignment.
+Can I pause the system temporarily?
+Answer:
+Yes. Use the “Pause” button if available, or click “Stop” and resume later.
+Who should I contact for technical issues?
+Answer:
+Refer to the support contact given in the application or documentation.
+
+Extra Functionality and Client-Specific Questions
+Can I request a custom feature?
+Answer:
+Yes. Customizations can be discussed with the vendor based on feasibility.
+Can I connect multiple cameras?
+Answer:
+Some versions support it. Contact support to enable multi-camera mode.
+Is it possible to automate reports daily?
+Answer:
+Yes, auto-reporting can be configured through scheduled tasks or scripts.
+Can I integrate this with my factory's SCADA system?
+Answer:
+Yes, integration can be done using data connectors or APIs.
+Does it support different languages in the interface?
+Answer:
+Language localization can be enabled based on request.
+Is there a mobile version of the software?
+Answer:
+Not by default. But remote viewing features can be developed if needed.
+Can I train staff on this system quickly?
+Answer:
+Yes, basic training takes under 30 minutes for operations.
+Can I simulate biscuit flow without real products?
+Answer:
+Yes, some systems have test/simulation mode for training purposes.
+Does the system support barcode or QR integration?
+Answer:
+Yes, if additional modules are installed.
+What if air pressure drops mid-process?
+Answer:
+Defective biscuits may not be ejected. Check air compressor and resume only after restoring pressure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔧 Basic Chatbot Idea
+Purpose:
+A chatbot to assist factory staff or supervisors in operating and troubleshooting the ML-Based Ejection System.
+Core Capabilities:
+Start/Stop Machine Guidance
+Product Variant Selection
+Defect Monitoring FAQs
+Real-time Issue Resolution
+Basic Troubleshooting
+Log & Report Access
+Support Contact Help

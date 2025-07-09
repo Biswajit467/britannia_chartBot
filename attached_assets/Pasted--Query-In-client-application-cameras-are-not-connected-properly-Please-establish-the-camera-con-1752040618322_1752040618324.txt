@@ -1,0 +1,45 @@
+📌 Query: In client application, cameras are not connected properly. Please establish the camera connection.
+✅ Answer Steps:
+Step 1: Go to the specific line (location) in the variant area where the camera setup is installed.
+Step 2: Check the TECASOFT control panel and open it.
+Step 3: Inside the control panel, locate the Ethernet switch.
+Step 4: Observe the lights on the Ethernet switch:
+  - If all lights are blinking fast, it indicates proper connectivity.
+  - If lights are not blinking properly, this may signal a disconnection or fault.
+Step 5: If abnormal blinking is noticed, unplug the Ethernet cables and re-plug them firmly.
+Step 6: Cross-check each Ethernet connection to ensure every wire is properly and securely connected.
+Step 7: Go to the AC room where the system is located.
+Step 8: Open the Client Application on the system.
+Step 9: Click the Refresh button inside the application.
+Step 10: Click the Stop button, wait for a moment, and then click the Start button again to restart the camera services.
+Step 11: If the issue still persists after restarting, please contact Developer Support for further assistance.
+
+
+📌 Query: In client application, PLC disconnected. Please establish the PLC connection.
+✅ Answer Steps:
+Step 1: Go to the specific line (location) in the variant area where the PLC setup is installed.
+Step 2: Check the TECASOFT control panel and open it. Confirm whether the control panel is ON or OFF. If it is OFF, turn ON the control panel.
+Step 3: Inside the control panel, locate the Ethernet switch.
+Step 4: Observe the lights on the Ethernet switch:
+  - If all lights are blinking fast, it indicates proper connectivity.
+  - If lights are not blinking properly, it may signal a disconnection or fault.
+Step 5: If abnormal blinking is noticed, unplug the Ethernet cables and re-plug them securely.
+Step 6: Cross-check all Ethernet connections to ensure every wire is properly and securely connected.
+Step 7: Go to the AC room where the main system is located. Cross-check whether the router’s Ethernet wires are connected properly.
+Step 8: Open the Client Application on the system.
+Step 9: Click the Refresh button in the application.
+Step 10: Click the Stop and OK button, wait for a moment, then click the Start and OK button to reinitialize the PLC connection.
+Step 11: If the issue still persists after these steps, please contact Developer Support for further assistance.
+
+
+📌 Query: In client application – RuntimeError at / 
+b' ISO: An error occurred during send TCP: Other Socket error (32)'
+✅ Answer Steps:
+Step 1: Go to the specific line (location) in the variant area where the PLC setup is installed.
+Step 2: Check the TECASOFT control panel and open it. Confirm whether the control panel is ON or OFF. If it is OFF, turn ON the control panel.
+Step 3: Go to the AC room where the main system is located.
+Step 4: Open the Client Application on the system.
+Step 5: Click the Refresh button in the application.
+Step 6: Click the Stop and OK button, wait for a moment, then click the Start and OK button to restart the application.
+Step 7: If the error still appears, restart the PC and then run the Client Application again.
+Step 8: If the issue still persists after all the above steps, please contact Developer Support for further assistance.
