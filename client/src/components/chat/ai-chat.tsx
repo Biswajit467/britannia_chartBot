@@ -1,25 +1,32 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Card } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Badge } from '@/components/ui/badge';
-import { VoiceControls } from './voice-controls';
-import { useOpenaiChat } from '@/hooks/use-openai-chat';
-import { useSpeech } from '@/hooks/use-speech';
-import { teamMembersData } from '@/lib/troubleshooting-data';
-import { Send, Bot, User, Phone, MessageSquare, Loader2 } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Card } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
+import { VoiceControls } from "./voice-controls";
+import { useOpenaiChat } from "@/hooks/use-openai-chat";
+import { useSpeech } from "@/hooks/use-speech";
+import { teamMembersData } from "@/lib/troubleshooting-data";
+import { Send, Bot, User, Phone, MessageSquare, Loader2 } from "lucide-react";
 
 export function AiChat() {
-  const [inputMessage, setInputMessage] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState('en-US');
+  const [inputMessage, setInputMessage] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("en-US");
   const [isCallDialogOpen, setIsCallDialogOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  
-  const { messages, sendMessage, isLoading, addWelcomeMessage } = useOpenaiChat();
+
+  const { messages, sendMessage, isLoading, addWelcomeMessage } =
+    useOpenaiChat();
   const { speak } = useSpeech();
 
   // Initialize with welcome message only once
@@ -41,7 +48,9 @@ export function AiChat() {
     const lastMessage = messages[messages.length - 1];
     if (lastMessage && !lastMessage.isUser) {
       // Extract text from HTML content for speech
-      const textContent = lastMessage.content.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ');
+      const textContent = lastMessage.content
+        .replace(/<[^>]*>/g, "")
+        .replace(/&nbsp;/g, " ");
       speak(textContent, selectedLanguage);
     }
   }, [messages, speak, selectedLanguage]);
@@ -49,13 +58,13 @@ export function AiChat() {
   const handleSendMessage = () => {
     if (inputMessage.trim() && !isLoading) {
       sendMessage(inputMessage.trim(), selectedLanguage);
-      setInputMessage('');
+      setInputMessage("");
       inputRef.current?.focus();
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
@@ -69,21 +78,26 @@ export function AiChat() {
   };
 
   const handleCallMember = (phone: string) => {
-    window.open(`tel:${phone}`, '_self');
+    window.open(`tel:${phone}`, "_self");
     setIsCallDialogOpen(false);
   };
 
   return (
     <div className="max-w-4xl mx-auto">
       {/* Chat Header */}
-      <motion.div 
+      <motion.div
         className="mb-6 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-bold gradient-text mb-4">AI Support Assistant</h2>
-        <p className="text-xl text-gray-300">Get instant help with camera connectivity, PLC issues, and system troubleshooting</p>
+        <h2 className="text-4xl font-bold gradient-text mb-4">
+          AI Support Assistant
+        </h2>
+        <p className="text-xl text-gray-300">
+          Get instant help with camera connectivity, PLC issues, and system
+          troubleshooting
+        </p>
       </motion.div>
 
       {/* Voice Controls */}
@@ -114,8 +128,12 @@ export function AiChat() {
                 <Bot className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white">TECHASOFT AI Assistant</h3>
-                <p className="text-white/80">Ready to help with your ML Ejection System</p>
+                <h3 className="text-xl font-semibold text-white">
+                  TECHASOFT AI Assistant
+                </h3>
+                <p className="text-white/80">
+                  Ready to help with your ML Ejection System
+                </p>
               </div>
             </div>
           </div>
@@ -131,14 +149,18 @@ export function AiChat() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -20, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className={`flex items-start space-x-3 ${message.isUser ? 'flex-row-reverse space-x-reverse' : ''}`}
+                    className={`flex items-start space-x-3 ${
+                      message.isUser ? "flex-row-reverse space-x-reverse" : ""
+                    }`}
                   >
                     {/* Avatar */}
-                    <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
-                      message.isUser 
-                        ? 'bg-neon-pink' 
-                        : 'bg-gradient-to-r from-neon-pink to-neon-cyan'
-                    }`}>
+                    <div
+                      className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
+                        message.isUser
+                          ? "bg-neon-pink"
+                          : "bg-gradient-to-r from-neon-pink to-neon-cyan"
+                      }`}
+                    >
                       {message.isUser ? (
                         <User className="h-4 w-4 text-white" />
                       ) : (
@@ -147,27 +169,36 @@ export function AiChat() {
                     </div>
 
                     {/* Message Content */}
-                    <div className={`max-w-md lg:max-w-lg ${message.isUser ? 'ml-auto' : ''}`}>
-                      <div className={`rounded-lg p-4 ${
-                        message.isUser 
-                          ? 'bg-neon-pink/20 border border-neon-pink/30' 
-                          : 'bg-dark-card border border-dark-border'
-                      }`}>
-                        <div 
+                    <div
+                      className={`max-w-md lg:max-w-lg ${
+                        message.isUser ? "ml-auto" : ""
+                      }`}
+                    >
+                      <div
+                        className={`rounded-lg p-4 ${
+                          message.isUser
+                            ? "bg-neon-pink/20 border border-neon-pink/30"
+                            : "bg-dark-card border border-dark-border"
+                        }`}
+                      >
+                        <div
                           className="text-white"
                           dangerouslySetInnerHTML={{ __html: message.content }}
                         />
                       </div>
-                      
+
                       {/* Issue Type Badge */}
                       {message.issueType && (
                         <div className="mt-2">
-                          <Badge variant="outline" className="text-xs border-neon-cyan text-neon-cyan">
+                          <Badge
+                            variant="outline"
+                            className="text-xs border-neon-cyan text-neon-cyan"
+                          >
                             {message.issueType.toUpperCase()} Issue
                           </Badge>
                         </div>
                       )}
-                      
+
                       {/* Timestamp */}
                       <div className="mt-1 text-xs text-gray-500">
                         {message.timestamp.toLocaleTimeString()}
@@ -222,7 +253,7 @@ export function AiChat() {
                 )}
               </Button>
             </div>
-            
+
             <div className="flex justify-between items-center mt-4">
               <div className="text-sm text-gray-400 flex items-center space-x-2">
                 <MessageSquare className="h-4 w-4 text-green-400" />
@@ -240,11 +271,13 @@ export function AiChat() {
       <Dialog open={isCallDialogOpen} onOpenChange={setIsCallDialogOpen}>
         <DialogContent className="bg-dark-bg border-dark-border text-white max-w-md">
           <DialogHeader>
-            <DialogTitle className="gradient-text">Call Support Team</DialogTitle>
+            <DialogTitle className="gradient-text">
+              Call Support Team
+            </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             {teamMembersData.map((member) => (
-              <Card 
+              <Card
                 key={member.phone}
                 className="p-4 bg-dark-card border-dark-border hover:border-neon-pink/50 transition-colors cursor-pointer"
                 onClick={() => handleCallMember(member.phone)}
@@ -254,7 +287,9 @@ export function AiChat() {
                     <div className="font-medium text-white">{member.name}</div>
                     <div className="text-sm text-neon-cyan">{member.role}</div>
                     <div className="text-xs text-gray-400">{member.phone}</div>
-                    <div className="text-xs text-gray-500">{member.description}</div>
+                    <div className="text-xs text-gray-500">
+                      {member.description}
+                    </div>
                   </div>
                   <Phone className="h-5 w-5 text-green-400" />
                 </div>
