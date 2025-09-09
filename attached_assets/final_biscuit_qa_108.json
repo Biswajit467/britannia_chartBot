@@ -1,0 +1,434 @@
+[
+  {
+    "question": "What are the types of defects we are rejecting in 50-50 biscuit (Oven End)?",
+    "answer": "• Ring Dark • Pale • Cut • Oil • Tailing"
+  },
+  {
+    "question": "What defects are detected in Milk Bikis (MBK)?",
+    "answer": "• Pale • Oil • Broken • Dark spot • Shape defect"
+  },
+  {
+    "question": "What are the common issues in Maska Chaska (50-50)?",
+    "answer": "• Pale • Ring • Crack • Burnt • Missing salt Which defects does the machine reject in Jim Jam (Oven End)? • Cream missing • Cream outside • Broken top biscuit • Pale • Shape mismatch"
+  },
+  {
+    "question": "What issues are targeted in Marie Gold (Cooling End)?",
+    "answer": "• Undercooked (Pale) • Overcooked (Dark) • Cracked • Missing print • Center misalignment"
+  },
+  {
+    "question": "Will machine detect cracked biscuits in Milk Bikis?",
+    "answer": "Yes, cracked and broken biscuits are detected and rejected."
+  },
+  {
+    "question": "Does the system detect oil marks on 50-50 biscuits?",
+    "answer": "Yes, oil patch/spot is one of the common defects we handle."
+  },
+  {
+    "question": "How does the machine identify pale biscuits?",
+    "answer": "By checking biscuit color; lighter-than-standard shades are flagged."
+  },
+  {
+    "question": "Can it reject biscuits with tailing issues?",
+    "answer": "Yes, biscuits with hanging or stretched dough (“tail”) are detected."
+  },
+  {
+    "question": "What about cream missing in Jim Jam?",
+    "answer": "Yes, top biscuit with no cream is rejected at the oven end."
+  },
+  {
+    "question": "Will it reject burnt biscuits?",
+    "answer": "Yes, excessively dark (burnt) biscuits are classified as defective."
+  },
+  {
+    "question": "Can we train it for new defect types?",
+    "answer": "Yes, we can add more defect types in future updates."
+  },
+  {
+    "question": "Is broken edge considered a defect?",
+    "answer": "Yes, any breakage or chip in edges is a reject."
+  },
+  {
+    "question": "Does the system check for biscuit count in a tray?",
+    "answer": "No, it only checks individual biscuit defects, not count."
+  },
+  {
+    "question": "Can it detect misaligned cream in Jim Jam?",
+    "answer": "Yes, cream outside the biscuit circle is flagged."
+  },
+  {
+    "question": "What if biscuit has both pale and oil defect?",
+    "answer": "Any one major defect is enough for rejection."
+  },
+  {
+    "question": "Does Marie Gold detection happen at oven or cooling end?",
+    "answer": "Only at the cooling end."
+  },
+  {
+    "question": "Why is Jim Jam checked at the oven end?",
+    "answer": "Because it allows early detection before packing stage."
+  },
+  {
+    "question": "Can we change defect sensitivity?",
+    "answer": "No, it's preset. You can request changes via support."
+  },
+  {
+    "question": "Are underfilled biscuits rejected in Milk Bikis?",
+    "answer": "If shape or surface pattern is affected, yes."
+  },
+  {
+    "question": "Can system detect salt-missing in 50-50 Maska Chaska?",
+    "answer": "Yes, it detects visual signs of missing salt sprinkles."
+  },
+  {
+    "question": "Is there a separate mode for each biscuit type?",
+    "answer": "Yes, you need to select product variant before starting."
+  },
+  {
+    "question": "What happens if the wrong product is selected?",
+    "answer": "Defect accuracy will drop; it may give wrong results."
+  },
+  {
+    "question": "Is the camera image saved for each defect?",
+    "answer": "No, but defect logs are maintained."
+  },
+  {
+    "question": "Can this system detect empty slots on the conveyor?",
+    "answer": "No, it focuses only on defective biscuit units. Which side does Marie Gold checking happen? Cooling End only."
+  },
+  {
+    "question": "How do I switch from 50-50 to Milk Bikis?",
+    "answer": "Stop the machine > Select Milk Bikis > Set RPM > Start"
+  },
+  {
+    "question": "Do I need to adjust the camera when changing products?",
+    "answer": "No, system auto-calibrates. If pale biscuits are not being rejected, what should I check? Check if correct variant is selected and camera is clean."
+  },
+  {
+    "question": "Can I view how many biscuits were rejected today?",
+    "answer": "Yes, use the log/report section on the software."
+  },
+  {
+    "question": "Is salt-missing biscuit considered bad?",
+    "answer": "Yes, it affects taste, so it is rejected. If biscuit is too small or cut, will it be rejected? Yes, size and shape mismatch are grounds for rejection."
+  },
+  {
+    "question": "What is “tailing” defect?",
+    "answer": "Extra dough hanging from the edge — rejected."
+  },
+  {
+    "question": "Do we need to clean the camera every day?",
+    "answer": "Yes, to ensure proper visibility."
+  },
+  {
+    "question": "What happens if biscuits are overlapping on the belt?",
+    "answer": "Detection may fail; ensure uniform spacing."
+  },
+  {
+    "question": "Is there any sound when a biscuit is rejected?",
+    "answer": "No, only visual counters/logs update."
+  },
+  {
+    "question": "Will a slightly broken biscuit be rejected?",
+    "answer": "If visibly broken, yes."
+  },
+  {
+    "question": "What happens if system wrongly rejects a good biscuit?",
+    "answer": "It’s rare. You can log and report it."
+  },
+  {
+    "question": "Can I pause detection for cleaning?",
+    "answer": "Yes, press the “Stop” button."
+  },
+  {
+    "question": "Can I view defect live on screen?",
+    "answer": "Yes, defect count and video are visible in real time."
+  },
+  {
+    "question": "What is the highest defect we see in Milk Bikis?",
+    "answer": "Usually Pale or Broken."
+  },
+  {
+    "question": "Can this system detect pattern mismatch in Marie Gold?",
+    "answer": "Yes, missing or shifted print is detectable."
+  },
+  {
+    "question": "How long does it take to switch between products?",
+    "answer": "Under 30 seconds."
+  },
+  {
+    "question": "How to reduce false rejections?",
+    "answer": "Ensure right product mode, good lighting, and clean lens."
+  },
+  {
+    "question": "What’s the most common Jim Jam defect?",
+    "answer": "Cream missing or misaligned cream."
+  },
+  {
+    "question": "Will system stop if camera fails?",
+    "answer": "It shows error; operator should stop and check."
+  },
+  {
+    "question": "Do we need to re-train for every small change?",
+    "answer": "No, unless the defect or product design changes significantly."
+  },
+  {
+    "question": "Can I operate the system without training?",
+    "answer": "Basic training is enough; interface is user-friendly."
+  },
+  {
+    "question": "How do I know which defect was rejected?",
+    "answer": "Use the logs or software dashboard."
+  },
+  {
+    "question": "What if we want to add a new defect?",
+    "answer": "Inform technical team; retraining will be arranged."
+  },
+  {
+    "question": "How do I start the machine?",
+    "answer": "Step 1: Open the desktop application Step 2: Select the product variant Step 3: Set the RPM as per the product requirement Step 4: Click the “Start” button"
+  },
+  {
+    "question": "How do I stop the machine?",
+    "answer": "Click the “Stop” button on the software interface. It will safely halt the operations."
+  },
+  {
+    "question": "Do I need any technical knowledge to use the software?",
+    "answer": "No, the interface is user-friendly and designed for non-technical users."
+  },
+  {
+    "question": "How do I choose the correct biscuit type?",
+    "answer": "Select the correct product variant from the dropdown menu or product selection panel in the interface."
+  },
+  {
+    "question": "Can I operate this system with no training?",
+    "answer": "Basic instructions are enough, and the UI is intuitive. A short demo session is recommended."
+  },
+  {
+    "question": "Where can I see if a biscuit is defective?",
+    "answer": "Live camera feed shows the production line. Defects are highlighted, and counts are displayed on the side panel."
+  },
+  {
+    "question": "Can I monitor the current production status?",
+    "answer": "Yes, the live monitoring screen shows real-time operations and defect counts."
+  },
+  {
+    "question": "How do I know which product is currently running?",
+    "answer": "The product name and variant are displayed at the top of the interface once selected."
+  },
+  {
+    "question": "How can I change the product type during a shift?",
+    "answer": "Click “Stop”, select a new product variant, set RPM, then click “Start”."
+  },
+  {
+    "question": "What is RPM and how do I set it?",
+    "answer": "RPM stands for Revolutions Per Minute of the conveyor. Set it in the product selection panel before starting the machine."
+  },
+  {
+    "question": "What does the live camera feed show?",
+    "answer": "It shows the production line and biscuits in real time for visual inspection."
+  },
+  {
+    "question": "How often is the defect count updated?",
+    "answer": "It updates live as biscuits pass through the detection zone."
+  },
+  {
+    "question": "What if the defect count looks too high?",
+    "answer": "Step 1: Pause the system Step 2: Inspect product input quality Step 3: Check if the correct product variant is selected Step 4: Contact technical support if needed"
+  },
+  {
+    "question": "How can I confirm the system is rejecting properly?",
+    "answer": "Check the ejection section physically or view the rejection status on screen."
+  },
+  {
+    "question": "What should I do if defects are not being ejected?",
+    "answer": "Step 1: Stop the system Step 2: Check air ejector mechanism Step 3: Ensure air pressure is active Step 4: Restart the system Step 5: Contact maintenance if the issue persists"
+  },
+  {
+    "question": "Is there an alert if the system stops detecting?",
+    "answer": "Yes, alerts or abnormal behavior in defect count or camera feed indicate a detection issue."
+  },
+  {
+    "question": "How can I access logs for past runs?",
+    "answer": "Click the “Logs” or “Reports” tab in the software to view all past production sessions."
+  },
+  {
+    "question": "Does the system give alerts for hardware issues?",
+    "answer": "Basic alerts are shown on-screen if the camera or ejection unit is not functioning."
+  },
+  {
+    "question": "What happens if power is lost during operation?",
+    "answer": "The system halts and resumes safely when restarted. Logs will show the interruption time."
+  },
+  {
+    "question": "Can I mute alert sounds or pop-ups?",
+    "answer": "Some versions may have sound controls. Check the settings section of the application."
+  },
+  {
+    "question": "How many product types can I run on this machine?",
+    "answer": "The system supports all trained variants like Bourbon and Pure Magic. You can add more through updates."
+  },
+  {
+    "question": "Can I run two products at the same time?",
+    "answer": "No, only one product variant can be selected per session to ensure accuracy."
+  },
+  {
+    "question": "How do I add a new product to the system?",
+    "answer": "This requires model retraining. Contact the technical team for adding new product variants."
+  },
+  {
+    "question": "Will the system work if I use untrained biscuits?",
+    "answer": "It may misclassify or show inaccurate defect counts. Only use trained products."
+  },
+  {
+    "question": "How do I switch between Bourbon and Pure Magic?",
+    "answer": "Step 1: Click “Stop” Step 2: Select the new variant Step 3: Adjust RPM Step 4: Click “Start”"
+  },
+  {
+    "question": "Can the system detect undercooked biscuits?",
+    "answer": "Yes, if such defects were included during training. Otherwise, accuracy may vary."
+  },
+  {
+    "question": "Does the system recognize broken edges or missing cream?",
+    "answer": "Yes, such features are detectable if part of the training data."
+  },
+  {
+    "question": "Will different lighting affect detection?",
+    "answer": "Yes. Stable lighting is necessary for accurate detection."
+  },
+  {
+    "question": "Can I save custom RPM settings for each product?",
+    "answer": "Yes, the system saves the last used RPM per product or allows you to set it manually."
+  },
+  {
+    "question": "Is biscuit size important for detection?",
+    "answer": "Yes. Each model is trained on specific sizes and shapes."
+  },
+  {
+    "question": "How do I view logs of rejected items?",
+    "answer": "Open the “Logs” section in the application. It shows date, time, product, and defect counts."
+  },
+  {
+    "question": "Can I export data from the logs?",
+    "answer": "Yes, some systems allow export in Excel or PDF format."
+  },
+  {
+    "question": "What data is stored in logs?",
+    "answer": "Start/stop times, product variant, total runtime, defect counts, and rejection timestamps."
+  },
+  {
+    "question": "Can I check who operated the machine last?",
+    "answer": "Yes, if the system has user login features."
+  },
+  {
+    "question": "Can I reset daily logs?",
+    "answer": "Yes. Use the “Reset Logs” button or clear data at the end of the shift."
+  },
+  {
+    "question": "Can I compare shift-wise rejection rates?",
+    "answer": "Yes, logs can be filtered by date and shift for analysis."
+  },
+  {
+    "question": "Can I track machine downtime?",
+    "answer": "Yes. The total running time and breaks are logged."
+  },
+  {
+    "question": "How can I calculate efficiency?",
+    "answer": "Use: Efficiency = (Accepted Items / Total Items) × 100"
+  },
+  {
+    "question": "Does the system show which defect was detected?",
+    "answer": "Only if labeled. Otherwise, it just shows “Defective” as a category."
+  },
+  {
+    "question": "Can I integrate this data with ERP systems?",
+    "answer": "Yes, through custom APIs or reporting exports."
+  },
+  {
+    "question": "Why is my defect count always zero?",
+    "answer": "Step 1: Check if the camera is working Step 2: Ensure correct product is selected Step 3: Restart the application Step 4: Check lighting and product placement The ejection is delayed, what should I do? Ensure timing sync between detection and air jet is correct. Contact maintenance if the delay persists."
+  },
+  {
+    "question": "Why is the interface not responding?",
+    "answer": "Restart the software. If the issue continues, check system RAM or contact IT support."
+  },
+  {
+    "question": "How do I update the software?",
+    "answer": "Contact the support team. Updates are usually done through installers or over-the-air if enabled."
+  },
+  {
+    "question": "Is internet required for daily use?",
+    "answer": "No, it runs offline after installation."
+  },
+  {
+    "question": "How do I request a product addition?",
+    "answer": "Email the technical team with sample images and specifications."
+  },
+  {
+    "question": "What if biscuits get stuck during inspection?",
+    "answer": "Stop the system, clear the jam, and restart after checking alignment."
+  },
+  {
+    "question": "Can I pause the system temporarily?",
+    "answer": "Yes. Use the “Pause” button if available, or click “Stop” and resume later. Who should I contact for technical issues? Refer to the support contact given in the application or documentation."
+  },
+  {
+    "question": "Can I request a custom feature?",
+    "answer": "Yes. Customizations can be discussed with the vendor based on feasibility."
+  },
+  {
+    "question": "Can I connect multiple cameras?",
+    "answer": "Some versions support it. Contact support to enable multi-camera mode."
+  },
+  {
+    "question": "Is it possible to automate reports daily?",
+    "answer": "Yes, auto-reporting can be configured through scheduled tasks or scripts."
+  },
+  {
+    "question": "Can I integrate this with my factory's SCADA system?",
+    "answer": "Yes, integration can be done using data connectors or APIs."
+  },
+  {
+    "question": "Does it support different languages in the interface?",
+    "answer": "Language localization can be enabled based on request."
+  },
+  {
+    "question": "Is there a mobile version of the software?",
+    "answer": "Not by default. But remote viewing features can be developed if needed."
+  },
+  {
+    "question": "Can I train staff on this system quickly?",
+    "answer": "Yes, basic training takes under 30 minutes for operations."
+  },
+  {
+    "question": "Can I simulate biscuit flow without real products?",
+    "answer": "Yes, some systems have test/simulation mode for training purposes."
+  },
+  {
+    "question": "Does the system support barcode or QR integration?",
+    "answer": "Yes, if additional modules are installed."
+  },
+  {
+    "question": "What if air pressure drops mid-process?",
+    "answer": "Defective biscuits may not be ejected. Check air compressor and resume only after restoring pressure."
+  },
+  {
+    "question": "In client application, cameras are not connected properly. Please establish the camera connection.",
+    "answer": "Step 1: Go to the specific line (location) in the variant area where the camera setup is installed. Step 2: Check the TECASOFT control panel and open it. Step 3: Inside the control panel, locate the Ethernet switch. Step 4: Observe the lights on the Ethernet switch: - If all lights are blinking fast, it indicates proper connectivity. - If lights are not blinking properly, this may signal a disconnection or fault. Step 5: If abnormal blinking is noticed, unplug the Ethernet cables and re-plug them firmly. Step 6: Cross-check each Ethernet connection to ensure every wire is properly and securely connected. Step 7: Go to the AC room where the system is located. Step 8: Open the Client Application on the system. Step 9: Click the Refresh button inside the application. Step 10: Click the Stop button, wait for a moment, and then click the Start button again to restart the camera services. Step 11: If the issue still persists after restarting, please contact Developer Support for further assistance."
+  },
+  {
+    "question": "In client application, PLC disconnected. Please establish the PLC connection.",
+    "answer": "Step 1: Go to the specific line (location) in the variant area where the PLC setup is installed. Step 2: Check the TECASOFT control panel and open it. Confirm whether the control panel is ON or OFF. If it is OFF, turn ON the control panel. Step 3: Inside the control panel, locate the Ethernet switch. Step 4: Observe the lights on the Ethernet switch: - If all lights are blinking fast, it indicates proper connectivity. - If lights are not blinking properly, it may signal a disconnection or fault. Step 5: If abnormal blinking is noticed, unplug the Ethernet cables and re-plug them securely. Step 6: Cross-check all Ethernet connections to ensure every wire is properly and securely connected. Step 7: Go to the AC room where the main system is located. Cross-check whether the router’s Ethernet wires are connected properly. Step 8: Open the Client Application on the system. Step 9: Click the Refresh button in the application. Step 10: Click the Stop and OK button, wait for a moment, then click the Start and OK button to reinitialize the PLC connection. Step 11: If the issue still persists after these steps, please contact Developer Support for further assistance."
+  },
+  {
+    "question": "In client application – Runtime Error at /",
+    "answer": "b' ISO: An error occurred during send TCP: Other Socket error (32)' Step 1: Go to the specific line (location) in the variant area where the PLC setup is installed. Step 2: Check the TECASOFT control panel and open it. Confirm whether the control panel is ON or OFF. If it is OFF, turn ON the control panel. Step 3: Go to the AC room where the main system is located. Step 4: Open the Client Application on the system. Step 5: Click the Refresh button in the application. Step 6: Click the Stop and OK button, wait for a moment, then click the Start and OK button to restart the application. Step 7: If the error still appears, restart the PC and then run the Client Application again. Step 8: If the issue still persists after all the above steps, please contact Developer Support for further assistance. Maintenance Guide for Rejection System 1. Power Off During Production Stop"
+  },
+  {
+    "question": "Whenever production is turned off for a long time:",
+    "answer": "Turn off the control panel power connection. Turn off the PC power supply as well. This helps in smooth operation and protects the system for long-term usage. Important: If the same belt is being used for two or more variants, you must create a proper rejection gap* as per the training given. If the gap is not set correctly, biscuits may not be rejected properly* or may fall freely without control. 2. Replacing the Rejection Bel"
+  },
+  {
+    "question": "When changing the rejection belt:",
+    "answer": "Remove the MS frame clamps using an Allen key. After changing the belt, place the frame back in the same marked position as before to maintain alignment. 3. Monthly / Quarterly Maintenance Every month or every 3 months, check whether the nozzles are becoming loose. During line breaks, clean the camera lens properly. Also, clean dust or oil from the top of the frame using air spray across the entire frame. 4. Daily Check – Air Supply Every day, check if the air connections are supplying proper air to the rejection system. 5. Handling Bulk or Stuck Biscuits In rare cases, if biscuits come in bulk or get stuck, use the easy adjustable rejection nozzle system. Adjust it using a 6mm Allen key for smooth biscuit flow and proper rejection."
+  }
+]

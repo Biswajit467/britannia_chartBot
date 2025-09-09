@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card } from "@/components/ui/card";
+import { Volume2, VolumeX } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +23,7 @@ export function AiChat() {
   const [inputMessage, setInputMessage] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("en-US");
   const [isCallDialogOpen, setIsCallDialogOpen] = useState(false);
+  const [isVoiceEnabled, setIsVoiceEnabled] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -44,16 +46,32 @@ export function AiChat() {
   }, [messages]);
 
   // Speak AI responses
+  // useEffect(() => {
+  //   const lastMessage = messages[messages.length - 1];
+  //   if (lastMessage && !lastMessage.isUser) {
+  //     // Extract text from HTML content for speech
+  //     const textContent = lastMessage.content
+  //       .replace(/<[^>]*>/g, "")
+  //       .replace(/&nbsp;/g, " ");
+  //     speak(textContent, selectedLanguage);
+  //   }
+  // }, [messages, speak, selectedLanguage]);
+
   useEffect(() => {
     const lastMessage = messages[messages.length - 1];
-    if (lastMessage && !lastMessage.isUser) {
-      // Extract text from HTML content for speech
+    if (isVoiceEnabled && lastMessage && !lastMessage.isUser) {
       const textContent = lastMessage.content
         .replace(/<[^>]*>/g, "")
         .replace(/&nbsp;/g, " ");
       speak(textContent, selectedLanguage);
     }
-  }, [messages, speak, selectedLanguage]);
+  }, [messages, speak, selectedLanguage, isVoiceEnabled]);
+
+  useEffect(() => {
+    if (!isVoiceEnabled) {
+      window.speechSynthesis.cancel(); // Stop any active speech
+    }
+  }, [isVoiceEnabled]);
 
   const handleSendMessage = () => {
     if (inputMessage.trim() && !isLoading) {
@@ -199,6 +217,27 @@ export function AiChat() {
                         </div>
                       )}
 
+                      {/* audio on and off btn */}
+                      <div className="flex items-center space-x-2">
+                        <Button
+                          size="icon"
+                          variant="ghost"
+                          onClick={() => setIsVoiceEnabled(!isVoiceEnabled)}
+                          title={
+                            isVoiceEnabled ? "Disable Voice" : "Enable Voice"
+                          }
+                        >
+                          {isVoiceEnabled ? (
+                            <Volume2 className="h-5 w-5 text-green-400" />
+                          ) : (
+                            <VolumeX className="h-5 w-5 text-red-400" />
+                          )}
+                        </Button>
+                        <span className="text-xs text-gray-500">
+                          {isVoiceEnabled ? "Voice ON" : "Voice OFF"}
+                        </span>
+                      </div>
+
                       {/* Timestamp */}
                       <div className="mt-1 text-xs text-gray-500">
                         {message.timestamp.toLocaleTimeString()}
@@ -254,13 +293,41 @@ export function AiChat() {
               </Button>
             </div>
 
-            <div className="flex justify-between items-center mt-4">
+            {/* <div className="flex justify-between items-center mt-4">
               <div className="text-sm text-gray-400 flex items-center space-x-2">
                 <MessageSquare className="h-4 w-4 text-green-400" />
                 <span>Secure AI Support</span>
               </div>
               <div className="text-xs text-gray-500">
                 Press Enter to send • Shift+Enter for new line
+              </div>
+            </div> */}
+
+            <div className="flex justify-between items-center mt-4">
+              <div className="text-sm text-gray-400 flex items-center space-x-2">
+                <MessageSquare className="h-4 w-4 text-green-400" />
+                <span>Secure AI Support</span>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  onClick={() => setIsVoiceEnabled(!isVoiceEnabled)}
+                  title={isVoiceEnabled ? "Disable Voice" : "Enable Voice"}
+                >
+                  {isVoiceEnabled ? (
+                    <Volume2 className="h-5 w-5 text-green-400" />
+                  ) : (
+                    <VolumeX className="h-5 w-5 text-red-400" />
+                  )}
+                </Button>
+                <span className="text-xs text-gray-500">
+                  {isVoiceEnabled ? "Voice ON" : "Voice OFF"}
+                </span>
+                <span className="text-xs text-gray-500 ml-2">
+                  Press Enter to send • Shift+Enter for new line
+                </span>
               </div>
             </div>
           </div>

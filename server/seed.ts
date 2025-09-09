@@ -492,15 +492,7 @@ export async function seedDatabase() {
           specialties: ["Machine Learning", "Computer Vision"],
           isActive: true,
         },
-        {
-          name: "Biswajit",
-          role: "AI ML Specialist",
-          phone: "+91 79788 31898",
-          email: "biswajit@techasoft.com",
-          languages: ["English", "Hindi"],
-          specialties: ["Machine Learning", "Backend Development"],
-          isActive: true,
-        },
+
         {
           name: "Palani",
           role: "AI ML Specialist",
@@ -517,6 +509,15 @@ export async function seedDatabase() {
           email: "suhas@techasoft.com",
           languages: ["English", "Hindi"],
           specialties: ["Machine Learning", "System Integration"],
+          isActive: true,
+        },
+        {
+          name: "Biswajit",
+          role: "AI ML Specialist",
+          phone: "+91 79788 31898",
+          email: "biswajit@techasoft.com",
+          languages: ["English", "Hindi"],
+          specialties: ["Machine Learning", "Backend Development"],
           isActive: true,
         },
       ]);
